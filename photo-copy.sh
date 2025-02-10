@@ -1,10 +1,20 @@
 #!/bin/bash
 
-YEAR=2024
-MONTH=12
+YEAR=2025
+MONTH=02
 
-cp DCIM/109_PANA/*.JPG /Volumes/onetouch/001_Project/Photography\ \($YEAR\)/photo/$YEAR/$MONTH
-cp DCIM/109_PANA/*.JPG /Volumes/Transcend/001_Project/Photography\ \($YEAR\)/photo/$YEAR/$MONTH
-cp DCIM/109_PANA/*.RW2 /Volumes/onetouch/001_Project/Photography\ \($YEAR\)/photo-raw/$YEAR/$MONTH
-cp DCIM/109_PANA/*.RW2 /Volumes/Transcend/001_Project/Photography\ \($YEAR\)/photo-raw/$YEAR/$MONTH
+SDCARD=/Volumes/SD001
+SDCARD_PHOTOS=$SDCARD/DCIM/109_PANA
+
+MAIN_TARGET=/Volumes/onetouch
+MAIN_PHOTOS=$MAIN_TARGET/1_Project/Photography$YEAR
+
+BACKUP_TARGET=/Volumes/Transcend
+BACKUP_PHOTOS=$BACKUP_TARGET/1_Project/Photography$YEAR
+
+cp $SDCARD_PHOTOS/*.JPG $MAIN_PHOTOS/photo/$YEAR/$MONTH
+cp $SDCARD_PHOTOS/*.RW2 $MAIN_PHOTOS/photo-raw/$YEAR/$MONTH
+
+cp $SDCARD_PHOTOS/*.JPG $BACKUP_PHOTOS/photo/$YEAR/$MONTH
+cp $SDCARD_PHOTOS/*.RW2 $BACKUP_PHOTOS/photo-raw/$YEAR/$MONTH
 
